@@ -37,14 +37,14 @@ steps:
       chmod 600 ~/.ssh/id_rsa
       ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
 
-  - name: Upload WAR
+  - name: Upload WAR to EC2
     run: |
       scp target/my-app.war \
       ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/tmp/my-app.war
 
   - name: Deploy to Tomcat
     run: |
-      ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << EOF
+      ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
         sudo cp /tmp/my-app.war /opt/tomcat/webapps/my-app.war
         sudo rm -rf /opt/tomcat/webapps/my-app
       EOF
