@@ -20,7 +20,7 @@ public class HelloServlet extends HttpServlet {
         response.setContentType("text/html");
 
         PrintWriter out = response.getWriter();
-        out.println("<h1>GitHub Actions Deployment Successful V2!</h1>");
+        out.println("<h1>GitHub Actions Deployment Successful V3!</h1>");
     }
 }
 
