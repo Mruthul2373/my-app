@@ -9,7 +9,7 @@ jobs:
 deploy:
 runs-on: ubuntu-latest
 
-```
+
 steps:
   - name: Checkout Source
     uses: actions/checkout@v5
@@ -48,4 +48,3 @@ steps:
       sudo cp /tmp/my-app.war /opt/tomcat/webapps/my-app.war
       sudo rm -rf /opt/tomcat/webapps/my-app
       EOF
-```
